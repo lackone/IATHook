@@ -80,7 +80,7 @@ extern "C" __declspec(naked) void myAdd()
 	//如果你是在提升栈之前进行代码的替换，那只能通过ESP来找参数
 	//如果没有pushad和pushfd，参数一为 ESP+4，参数二为 ESP+8
 	//参数一为 ESP + 0x28（32 + 4 + 4）
-	//参数二为 EBP + 0x2c (32 + 4 + 8）
+	//参数二为 ESP + 0x2c (32 + 4 + 8）
 	//由于我是在提升堆栈之后进行代码的替换，所以这里我可以用EBP来找参数
 	//参数一为 EBP + 0x8
 	//参数二为 EBP + 0xc
